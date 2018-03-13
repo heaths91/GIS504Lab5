@@ -1,4 +1,4 @@
-```xml
+
 package com.example.stuartheath.googlemap
 
 import android.support.v7.app.AppCompatActivity
@@ -42,4 +42,4 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(twente))
     }
 }
-```
+
