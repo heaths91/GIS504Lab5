@@ -1,0 +1,29 @@
+package com.example.stuartheath.esri
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import com.esri.arcgisruntime.mapping.ArcGISMap
+import com.esri.arcgisruntime.mapping.Basemap
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        // define basemap type and select coordinates for University Twente
+        val map = ArcGISMap(Basemap.Type.IMAGERY_WITH_LABELS_VECTOR, 52.2422, 6.8526, 16)
+        // set the map to be displayed in the layout's MapView
+        mapView.map = map
+    }
+    override fun onPause() {
+        super.onPause()
+        mapView.pause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mapView.resume()
+    }
+
+}
